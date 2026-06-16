@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donnie Rocapor Gallocanta Jr. | Professional Portfolio</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,24 +14,20 @@
         :root {
             --bg-main: #f8fafc;
             --bg-card: #ffffff;
-            --brand-primary: #0f172a; /* Slate 900 */
-            --brand-secondary: #2563eb; /* Cobalt Blue */
-            --brand-accent: #38bdf8; /* Sky Blue */
-            --text-main: #1e293b; /* Slate 800 */
-            --text-muted: #64748b; /* Slate 500 */
-            --border-light: #e2e8f0; /* Slate 200 */
-            --tech-bg: #eff6ff; /* Soft Blue Tint */
-            --tech-text: #1e40af; /* Deep Blue Tint */
+            --brand-primary: #0f172a; 
+            --brand-secondary: #2563eb; 
+            --brand-accent: #38bdf8; 
+            --text-main: #1e293b; 
+            --text-muted: #64748b; 
+            --border-light: #e2e8f0; 
+            --tech-bg: #eff6ff; 
+            --tech-text: #1e40af; 
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
         }
 
         body {
@@ -42,63 +37,22 @@
             line-height: 1.6;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
+            padding: 2rem 1rem;
         }
 
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Section Layouts */
+        .portfolio-section {
+            padding: 3rem 0;
             border-bottom: 1px solid var(--border-light);
-            z-index: 900;
         }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1.2rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-weight: 800;
-            font-size: 1.15rem;
-            color: var(--brand-primary);
-            letter-spacing: -0.5px;
-            text-transform: uppercase;
-        }
-
-        .logo span {
-            color: var(--brand-secondary);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2.5rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: color 0.2s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--brand-secondary);
-        }
-
-        /* Sections Layouts */
-        section {
-            padding: 8rem 2rem 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
+        
+        .portfolio-section:last-of-type {
+            border-bottom: none;
         }
 
         .section-title {
@@ -122,91 +76,10 @@
             border-radius: 2px;
         }
 
-        /* Hero Layout */
-        #hero {
-            min-height: 85vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            padding-top: 10rem;
-        }
-
-        .hero-tag {
-            font-weight: 600;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--brand-secondary);
-            margin-bottom: 1rem;
-        }
-
-        h1 {
-            font-size: 4rem;
-            font-weight: 800;
-            color: var(--brand-primary);
-            line-height: 1.1;
-            margin-bottom: 1.2rem;
-            letter-spacing: -1.5px;
-        }
-
-        .subtitle {
-            font-size: 1.35rem;
-            font-weight: 500;
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-        }
-
-        .hero-desc {
-            max-width: 800px;
-            font-size: 1.15rem;
-            color: var(--text-main);
-            margin-bottom: 3rem;
-            line-height: 1.7;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1.2rem;
-        }
-
-        .btn {
-            font-size: 0.95rem;
-            font-weight: 600;
-            padding: 0.85rem 2.2rem;
-            border-radius: 6px;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-
-        .btn-primary {
-            background: var(--brand-secondary);
-            color: #ffffff;
-            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.2);
-        }
-
-        .btn-primary:hover {
-            background: #1d4ed8;
-            transform: translateY(-1px);
-            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
-        }
-
-        .btn-secondary {
-            border: 1px solid var(--border-light);
-            color: var(--text-main);
-            background: var(--bg-card);
-        }
-
-        .btn-secondary:hover {
-            background: var(--bg-main);
-            border-color: #cbd5e1;
-            transform: translateY(-1px);
-        }
-
         /* Systems Clean Enterprise Grid */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 1.75rem;
         }
 
@@ -280,11 +153,6 @@
             letter-spacing: 0.2px;
         }
 
-        .card-stack i {
-            font-size: 0.85rem;
-            opacity: 0.8;
-        }
-
         /* Skills Matrix Layout */
         .skills-container {
             display: grid;
@@ -317,13 +185,6 @@
             font-weight: 500;
             color: var(--text-main);
             box-shadow: 0 1px 2px rgba(0,0,0,0.02);
-            transition: all 0.2s ease;
-        }
-
-        .tag:hover {
-            border-color: var(--brand-secondary);
-            color: var(--brand-secondary);
-            transform: translateY(-1px);
         }
 
         .tag.advanced {
@@ -332,18 +193,12 @@
             border: none;
         }
 
-        .tag.advanced:hover {
-            background-color: var(--brand-secondary);
-            color: #ffffff;
-        }
-
         .eligibility-card {
             background: var(--brand-primary);
             color: #ffffff;
             padding: 2.5rem 2rem;
             border-radius: 8px;
             box-shadow: 0 10px 30px rgba(15, 23, 42, 0.1);
-            position: relative;
         }
 
         .eligibility-card h3 {
@@ -373,7 +228,6 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
-            margin-top: 1rem;
         }
 
         .infra-card {
@@ -382,12 +236,6 @@
             padding: 2.2rem 2rem;
             border-radius: 8px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.02);
-            transition: all 0.2s ease;
-        }
-
-        .infra-card:hover {
-            border-color: var(--brand-secondary);
-            transform: translateY(-2px);
         }
 
         .infra-card i {
@@ -482,321 +330,268 @@
             line-height: 1.3rem;
         }
 
-        /* Clean Minimal Footer Blueprint */
-        footer {
-            background: var(--brand-primary);
-            color: #94a3b8;
-            padding: 5rem 2rem;
-            text-align: center;
-            border-top: 1px solid var(--border-light);
-            margin-top: 8rem;
-        }
-
-        footer p {
-            max-width: 700px;
-            margin: 0 auto 0.75rem auto;
-            font-size: 0.95rem;
-        }
-
         /* Responsive */
         @media (max-width: 992px) {
-            h1 { font-size: 3rem; }
             .skills-container { grid-template-columns: 1fr; gap: 3rem; }
-        }
-        
-        @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            .nav-links { display: none; }
-            section { padding-top: 6rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Professional Navigation Menu -->
-    <nav>
-        <div class="nav-container">
-            <div class="logo">Donnie <span>Gallocanta</span></div>
-            <ul class="nav-links">
-                <li><a href="#hero">Overview</a></li>
-                <li><a href="#systems">Applications</a></li>
-                <li><a href="#skills">Skills & Stack</a></li>
-                <li><a href="#infra">Infrastructure</a></li>
-                <li><a href="#history">Education</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div class="container">
 
-    <!-- Main Hero Matrix Content -->
-    <section id="hero">
-        <div class="hero-tag">Enterprise Portfolio</div>
-        <h1>Donnie R. Gallocanta Jr.</h1>
-        <div class="subtitle">Project Technical Staff III &bull; Regional ICT Focal</div>
-        <p class="hero-desc">
-            Full-stack engineer specializing in sovereign public-sector digital environments. Architected over a dozen production-level enterprise databases, systems integrations, and network optimizations driving continuous operations for CHED and NEDA Region 1.
-        </p>
-        <div class="cta-buttons">
-            <a href="#systems" class="btn btn-primary">View Applications</a>
-            <a href="#skills" class="btn btn-secondary">Core Expertise</a>
-        </div>
-    </section>
-
-    <!-- Software Solutions Enterprise Grid -->
-    <section id="systems">
-        <h2 class="section-title">Deployed Application Repository</h2>
-        <div class="grid">
-            
-            <div class="card">
-                <div class="card-content">
-                    <div class="card-icon"><i class="fa-solid fa-bolt"></i></div>
-                    <h3>Quality Statistics System (qStats)</h3>
-                    <p>Internal communication prioritizing network tracking active queues dynamically based on submission tier complexity metrics.</p>
-                </div>
-                <div class="card-footer">
-                    <div class="card-stack"><i class="fa-solid fa-code"></i> PHP / MySQL / JS / CSS</div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-content">
-                    <div class="card-icon"><i class="fa-solid fa-server"></i></div>
-                    <h3>HEMIS Collection & Analytics</h3>
-                    <p>Higher Education Management Information System records aggregator executing macro-level database tracking across regional campus records.</p>
-                </div>
-                <div class="card-footer">
-                    <div class="card-stack"><i class="fa-solid fa-code"></i> PHP / MySQL / JSON / JQuery</div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-content">
-                    <div class="card-icon"><i class="fa-solid fa-wallet"></i></div>
-                    <h3>eProcurement Infrastructure</h3>
-                    <p>Full-stack fiscal pipeline automated to compile dynamic PPMP/APP data, control structural budget caps, and track internal generation rules for RIS, PR, PO, RFQ, and procurement agreements.</p>
-                </div>
-                <div class="card-footer">
-                    <div class="card-stack"><i class="fa-solid fa-code"></i> PHP / MySQL / JSON / XML</div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-content">
-                    <div class="card-icon"><i class="fa-solid fa-location-arrow"></i></div>
-                    <h3>eTravel Order Node</h3>
-                    <p>Online system logging official office travel filings, tracking request hierarchies, and firing instantaneous real-time approval notifications.</p>
-                </div>
-                <div class="card-footer">
-                    <div class="card-stack"><i class="fa-solid fa-code"></i> PHP / MySQL / JavaScript</div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-content">
-                    <div class="card-icon"><i class="fa-solid fa-network-wired"></i></div>
-                    <h3>eRPMES Portal</h3>
-                    <p>Electronic Regional Project Monitoring and Evaluation system designed to ingest online agency submissions, manage completions, and index security logs.</p>
-                </div>
-                <div class="card-footer">
-                    <div class="card-stack"><i class="fa-solid fa-code"></i> PHP / MySQL / HTML5</div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-content">
-                    <div class="card-icon"><i class="fa-solid fa-cubes"></i></div>
-                    <h3>eSupply Inventory Engine</h3>
-                    <p>Automated warehouse auditing pipeline updating equipment records, tracking material valuation fluctuations, and rendering historical Supply Ledgers.</p>
-                </div>
-                <div class="card-footer">
-                    <div class="card-stack"><i class="fa-solid fa-code"></i> PHP / MySQL / DB Design</div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-content">
-                    <div class="card-icon"><i class="fa-solid fa-gauge-high"></i></div>
-                    <h3>eBalance Scorecard (eBSC)</h3>
-                    <p>Performance metric network monitoring unit target metrics relative to baseline milestones utilizing standard DOST structural frameworks.</p>
-                </div>
-                <div class="card-footer">
-                    <div class="card-stack"><i class="fa-solid fa-code"></i> PHP / MySQL / JS Matrix</div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-content">
-                    <div class="card-icon"><i class="fa-solid fa-user-shield"></i></div>
-                    <h3>SAS Registration System</h3>
-                    <p>Student Affairs and Services tracker cataloging complete academic higher education institution logs cleanly into central server pools.</p>
-                </div>
-                <div class="card-footer">
-                    <div class="card-stack"><i class="fa-solid fa-code"></i> PHP / MySQL / Web Dev</div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-content">
-                    <div class="card-icon"><i class="fa-solid fa-globe"></i></div>
-                    <h3>Foreign Students Registry</h3>
-                    <p>Isolated compliance logging framework specialized in authenticating foreign enrollment files across regional universities.</p>
-                </div>
-                <div class="card-footer">
-                    <div class="card-stack"><i class="fa-solid fa-code"></i> PHP / MySQL / Security</div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-content">
-                    <div class="card-icon"><i class="fa-solid fa-calendar-days"></i></div>
-                    <h3>Staff Activity Matrix</h3>
-                    <p>Dynamic sorting calendar interface matching personnel travel parameters, schedules, and active training events across local maps.</p>
-                </div>
-                <div class="card-footer">
-                    <div class="card-stack"><i class="fa-solid fa-code"></i> PHP / MySQL / UI Coding</div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-content">
-                    <div class="card-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
-                    <h3>DTR Platform Array</h3>
-                    <p>Custom employee time-tracking dashboard engineered to monitor biometric profiles and intervals inside CHED Region 1 and NEDA blocks.</p>
-                </div>
-                <div class="card-footer">
-                    <div class="card-stack"><i class="fa-solid fa-code"></i> PHP / MySQL / Server Sync</div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-content">
-                    <div class="card-icon"><i class="fa-solid fa-calculator"></i></div>
-                    <h3>Tuition Analytics Hub</h3>
-                    <p>Analytical financial portal capturing fee schedules across HEIs to render automated trend matrices for data collection sweeps.</p>
-                </div>
-                <div class="card-footer">
-                    <div class="card-stack"><i class="fa-solid fa-code"></i> PHP / MySQL / Analytics</div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-content">
-                    <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                    <h3>Online Police Record System</h3>
-                    <p>Academic thesis production framework matching secure, encrypted records management profiles across custom internal Java platforms.</p>
-                </div>
-                <div class="card-footer">
-                    <div class="card-stack"><i class="fa-solid fa-code"></i> Java Web / MySQL / CSS</div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Technical Parameter Breakdown -->
-    <section id="skills">
-        <h2 class="section-title">Core Technology Stack</h2>
-        <div class="skills-container">
-            <div>
-                <div class="skills-block">
-                    <h3>Software Engineering & Web Development</h3>
-                    <div class="tags">
-                        <span class="tag advanced">PHP</span>
-                        <span class="tag advanced">Java Systems</span>
-                        <span class="tag advanced">MySQL Management & Architecture</span>
-                        <span class="tag advanced">HTML5 Layer</span>
-                        <span class="tag advanced">JavaScript Engine</span>
-                        <span class="tag advanced">JQuery Libs</span>
-                        <span class="tag advanced">CSS Development</span>
-                        <span class="tag advanced">JSON / XML Parsing</span>
-                        <span class="tag advanced">Database Engineering</span>
+        <!-- Software Solutions Enterprise Grid -->
+        <div class="portfolio-section">
+            <h2 class="section-title">Deployed Application Repository</h2>
+            <div class="grid">
+                
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-icon"><i class="fa-solid fa-bolt"></i></div>
+                        <h3>Quality Statistics System (qStats)</h3>
+                        <p>Dynamic communication and information processing engine built for CHED. Features smart network tracking prioritizing critical records by submission tier urgency metrics.</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-stack"><i class="fa-solid fa-code"></i> PHP / MySQL / JS / CSS</div>
                     </div>
                 </div>
 
-                <div class="skills-block">
-                    <h3>DevOps, Deployment & Infrastructure Operations</h3>
-                    <div class="tags">
-                        <span class="tag">System Provisioning</span>
-                        <span class="tag">DNS Management</span>
-                        <span class="tag">IP Masking & Routing</span>
-                        <span class="tag">Firewall Execution</span>
-                        <span class="tag">SSL Cryptography Protocols</span>
-                        <span class="tag">Database Tuning</span>
-                        <span class="tag">Multi-Platform A/V Operations</span>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-icon"><i class="fa-solid fa-chart-line"></i></div>
+                        <h3>CHED Dashboard & Analytics System</h3>
+                        <p>Real-time processing nexus tracking HEI submissions. Features rich graphical insights, foreign student metrics, and an integrated, structured course database system.</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-stack"><i class="fa-solid fa-code"></i> PHP / MySQL / ChartJS / UI</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <h3>StuFAPs Online Application</h3>
+                        <p>Centralized financial aid application processing suite built with systemic email integration layers to handle digital processing for applicant sweeps smoothly.</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-stack"><i class="fa-solid fa-code"></i> PHP / MySQL / Email Sync</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-icon"><i class="fa-solid fa-user-check"></i></div>
+                        <h3>StuFAPs Admin Dashboard</h3>
+                        <p>A specialized enterprise administrative validation panel engineered for intensive scholarship application review cycles, status adjustments, and record filtering.</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-stack"><i class="fa-solid fa-code"></i> PHP / MySQL / Dashboard UI</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-icon"><i class="fa-solid fa-wallet"></i></div>
+                        <h3>eProcurement Infrastructure</h3>
+                        <p>Full-stack fiscal engine automated to generate dynamic PPMP/APP documents, track strict structural budget allocations, integrate an eSuggestion Box, and securely process complex corporate forms.</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-stack"><i class="fa-solid fa-code"></i> PHP / MySQL / Forms Engine</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-icon"><i class="fa-solid fa-network-wired"></i></div>
+                        <h3>eRPMES Portal</h3>
+                        <p>Electronic Regional Project Monitoring and Evaluation system (NEDA) supporting online project implementation workflows, secure user access hierarchies, and instant submission acknowledgments.</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-stack"><i class="fa-solid fa-code"></i> PHP / MySQL / Project Infra</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-icon"><i class="fa-solid fa-location-arrow"></i></div>
+                        <h3>eTravel Order Node</h3>
+                        <p>A user-focused tool for online filing of travel orders. Handles multi-level approvals, sends automated real-time notifications, and optimizes oversight pipelines.</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-stack"><i class="fa-solid fa-code"></i> PHP / MySQL / JavaScript</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-icon"><i class="fa-solid fa-cubes"></i></div>
+                        <h3>eSupply Inventory Engine</h3>
+                        <p>Automated warehouse auditing framework tracking precise item cost history over time and generating reliable, instantly exportable Supply Ledgers.</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-stack"><i class="fa-solid fa-code"></i> PHP / MySQL / DB Design</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-icon"><i class="fa-solid fa-gauge-high"></i></div>
+                        <h3>eBalance Scorecard (eBSC)</h3>
+                        <p>Strategic performance monitoring infrastructure tailored to track government unit target metrics based on official DOST structural standards.</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-stack"><i class="fa-solid fa-code"></i> PHP / MySQL / Target Matrix</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-icon"><i class="fa-solid fa-user-shield"></i></div>
+                        <h3>SAS Registration System</h3>
+                        <p>Student Affairs and Services tracking engine cataloging complete academic Higher Education Institution (HEI) logs smoothly into central databases.</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-stack"><i class="fa-solid fa-code"></i> PHP / MySQL / Web Dev</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-icon"><i class="fa-solid fa-globe"></i></div>
+                        <h3>Foreign Students Registry</h3>
+                        <p>An isolated international data tracking system designed for HEIs to manage and capture foreign enrollment analytics across regional networks.</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-stack"><i class="fa-solid fa-code"></i> PHP / MySQL / Security</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-icon"><i class="fa-solid fa-calendar-days"></i></div>
+                        <h3>Employee Tracking System</h3>
+                        <p>Calendar-driven operations interface built to track staff training progressions, travel logs, and active field tasks across an interactive dashboard grid.</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-stack"><i class="fa-solid fa-code"></i> PHP / MySQL / UI Coding</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <h3>Online Police Record System</h3>
+                        <p>Academic thesis production framework matching secure, encrypted records management profiles across custom internal Java platforms.</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-stack"><i class="fa-solid fa-code"></i> Java Web / MySQL / CSS</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Technical Parameter Breakdown -->
+        <div class="portfolio-section">
+            <h2 class="section-title">Core Technology Stack</h2>
+            <div class="skills-container">
+                <div>
+                    <div class="skills-block">
+                        <h3>Software Engineering & Web Development</h3>
+                        <div class="tags">
+                            <span class="tag advanced">PHP</span>
+                            <span class="tag advanced">Java Systems</span>
+                            <span class="tag advanced">MySQL Management & Architecture</span>
+                            <span class="tag advanced">HTML5 Layer</span>
+                            <span class="tag advanced">JavaScript Engine</span>
+                            <span class="tag advanced">JQuery Libs</span>
+                            <span class="tag advanced">CSS Development</span>
+                            <span class="tag advanced">JSON / XML Parsing</span>
+                            <span class="tag advanced">Database Engineering</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-block">
+                        <h3>DevOps, Deployment & Infrastructure Operations</h3>
+                        <div class="tags">
+                            <span class="tag">System Provisioning</span>
+                            <span class="tag">DNS Management</span>
+                            <span class="tag">IP Masking & Routing</span>
+                            <span class="tag">Firewall Execution</span>
+                            <span class="tag">SSL Cryptography Protocols</span>
+                            <span class="tag">Database Tuning</span>
+                            <span class="tag">Multi-Platform A/V Operations</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="eligibility-card">
+                        <h3>Government Eligibility</h3>
+                        <div class="eligibility-status">EDPSE Certified</div>
+                        <p>
+                            Electronic Data Processing Specialist Eligibility. Granted under Item No. 8, Part V of CSC MC No. 12, s. 2003 regarding Revised Qualification Frameworks.
+                        </p>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div>
-                <div class="eligibility-card">
-                    <h3>Government Eligibility</h3>
-                    <div class="eligibility-status">EDPSE Certified</div>
-                    <p>
-                        Electronic Data Processing Specialist Eligibility. Granted under Item No. 8, Part V of CSC MC No. 12, s. 2003 regarding Revised Qualification Frameworks.
-                    </p>
+        <!-- Network Physical Matrix Layer -->
+        <div class="portfolio-section">
+            <h2 class="section-title">Network & Hardware Operations</h2>
+            <div class="infra-grid">
+                <div class="infra-card">
+                    <i class="fa-solid fa-route"></i>
+                    <h3>Structured LAN Routing</h3>
+                    <p>Completed full design and structural routing loops utilizing CAT6 protocols within physical NEDA installations.</p>
+                </div>
+                <div class="infra-card">
+                    <i class="fa-solid fa-network-wired"></i>
+                    <h3>Bandwidth Optimization</h3>
+                    <p>Designed and managed network subnet systems across active trunks to isolate terminal loops and maximize connection vectors.</p>
+                </div>
+                <div class="infra-card">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h3>Server & Perimeter Safety</h3>
+                    <p>Managed secure servers at NEDA and constructed complete surveillance grids covering internal structural blindspots.</p>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Network Physical Matrix Layer -->
-    <section id="infra">
-        <h2 class="section-title">Network & Hardware Operations</h2>
-        <div class="infra-grid">
-            <div class="infra-card">
-                <i class="fa-solid fa-route"></i>
-                <h3>Structured LAN Routing</h3>
-                <p>Completed full design and structural routing loops utilizing CAT6 protocols within physical NEDA installations.</p>
-            </div>
-            <div class="infra-card">
-                <i class="fa-solid fa-network-wired"></i>
-                <h3>Bandwidth Optimization</h3>
-                <p>Designed and managed network subnet systems across active trunks to isolate terminal loops and maximize connection vectors.</p>
-            </div>
-            <div class="infra-card">
-                <i class="fa-solid fa-shield-halved"></i>
-                <h3>Server & Perimeter Safety</h3>
-                <p>Managed secure servers at NEDA and constructed complete surveillance grids covering internal structural blindspots.</p>
+        <!-- Professional Timeline -->
+        <div class="portfolio-section">
+            <h2 class="section-title">Education & Credentials</h2>
+            <div class="timeline">
+                
+                <div class="timeline-item">
+                    <div class="time">Class of 2015</div>
+                    <div class="timeline-title">Bachelor of Science in Computer Science</div>
+                    <div class="timeline-school">Don Mariano Marcos Memorial State University (DMMMSU - SLUC)</div>
+                    <ul class="timeline-bullets">
+                        <li>Awarded <strong>Web Developer of the Year</strong> Honors</li>
+                        <li><strong>Champion</strong> – Computer System Servicing Area (6th La Union Provincial Skills Arena)</li>
+                        <li><strong>1st Runner Up</strong> – Computer Hardware Servicing (4th La Union Skills Arena)</li>
+                        <li>Recipient of the <strong>Institutional Leadership Award</strong> (S.Y. 2013-2014)</li>
+                        <li>Thesis Work: *Regional Training Center 1 Online Police Record System* (Engineered on Java Web technologies and cataloged at the 1st CCS Research Conference on ICT)</li>
+                        <li>2nd Position – CST System Programming Sprint</li>
+                        <li>Professional Certifications: PC Hardware Servicing <strong>NCII</strong> and PC Programming <strong>NCIV</strong></li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="time">Class of 2011</div>
+                    <div class="timeline-title">Secondary Education Graduate</div>
+                    <div class="timeline-school">Pinmilapil National High School (PNHS)</div>
+                    <ul class="timeline-bullets">
+                        <li>Graduated with distinct dual honors: <strong>Athlete of the Year</strong> & <strong>Best in Computer Science</strong></li>
+                    </ul>
+                </div>
+
             </div>
         </div>
-    </section>
 
-    <!-- Professional Timeline -->
-    <section id="history">
-        <h2 class="section-title">Education & Credentials</h2>
-        <div class="timeline">
-            
-            <div class="timeline-item">
-                <div class="time">Class of 2015</div>
-                <div class="timeline-title">Bachelor of Science in Computer Science</div>
-                <div class="timeline-school">Don Mariano Marcos Memorial State University (DMMMSU - SLUC)</div>
-                <ul class="timeline-bullets">
-                    <li>Awarded <strong>Web Developer of the Year</strong> Honors</li>
-                    <li><strong>Champion</strong> – Computer System Servicing Area (6th La Union Provincial Skills Arena)</li>
-                    <li><strong>1st Runner Up</strong> – Computer Hardware Servicing (4th La Union Skills Arena)</li>
-                    <li>Recipient of the <strong>Institutional Leadership Award</strong> (S.Y. 2013-2014)</li>
-                    <li>Thesis Work: *Regional Training Center 1 Online Police Record System* (Engineered on Java Web technologies and cataloged at the 1st CCS Research Conference on ICT)</li>
-                    <li>2nd Position – CST System Programming Sprint</li>
-                    <li>Professional Certifications: PC Hardware Servicing <strong>NCII</strong> and PC Programming <strong>NCIV</strong></li>
-                </ul>
-            </div>
-
-            <div class="timeline-item">
-                <div class="time">Class of 2011</div>
-                <div class="timeline-title">Secondary Education Graduate</div>
-                <div class="timeline-school">Pinmilapil National High School (PNHS)</div>
-                <ul class="timeline-bullets">
-                    <li>Graduated with distinct dual honors: <strong>Athlete of the Year</strong> & <strong>Best in Computer Science</strong></li>
-                </ul>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>Donnie Rocapor Gallocanta Jr. &bull; Enterprise Systems & Infrastructure Portfolio</p>
-        <p style="font-size:0.85rem; color: #64748b; margin-top: 0.5rem;">DMMMSU-SLUC Computer Science Alumnus &bull; Government Systems Infrastructure</p>
-    </footer>
+    </div>
 
 </body>
 </html>
