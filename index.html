@@ -3,23 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Google Fonts -->
+    <title>Donnie Rocapor Gallocanta Jr. | Full-Stack Engineer Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
             --bg-main: #f8fafc;
             --bg-card: #ffffff;
-            --brand-primary: #0f172a; 
-            --brand-secondary: #2563eb; 
-            --brand-accent: #38bdf8; 
-            --text-main: #1e293b; 
-            --text-muted: #64748b; 
-            --border-light: #e2e8f0; 
+            --brand-primary: #0f172a; /* Slate 900 */
+            --brand-secondary: #2563eb; /* Cobalt Blue */
+            --brand-accent: #38bdf8; /* Sky Blue */
+            --text-main: #1e293b; /* Slate 800 */
+            --text-muted: #64748b; /* Slate 500 */
+            --border-light: #e2e8f0; /* Slate 200 */
             --tech-bg: #eff6ff; 
             --tech-text: #1e40af; 
         }
@@ -30,6 +29,10 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             background-color: var(--bg-main);
             color: var(--text-main);
@@ -37,17 +40,151 @@
             line-height: 1.6;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
-            padding: 2rem 1rem;
         }
 
+        /* Fixed Navigation Header Bar */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.15rem;
+            color: var(--brand-primary);
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: var(--brand-secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--brand-secondary);
+        }
+
+        /* Container Blueprint */
         .container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 2rem;
         }
 
-        /* Section Layouts */
+        /* Hero / Landing Section Styling */
+        #overview {
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 8rem;
+            padding-bottom: 4rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .hero-tag {
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--brand-secondary);
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 3.8rem;
+            font-weight: 800;
+            color: var(--brand-primary);
+            line-height: 1.1;
+            margin-bottom: 1.2rem;
+            letter-spacing: -1.5px;
+        }
+
+        .subtitle {
+            font-size: 1.35rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .hero-desc {
+            max-width: 800px;
+            font-size: 1.15rem;
+            color: var(--text-main);
+            margin-bottom: 3rem;
+            line-height: 1.7;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.2rem;
+        }
+
+        .btn {
+            font-size: 0.95rem;
+            font-weight: 600;
+            padding: 0.85rem 2.2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background: var(--brand-secondary);
+            color: #ffffff;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.2);
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--border-light);
+            color: var(--text-main);
+            background: var(--bg-card);
+        }
+
+        .btn-secondary:hover {
+            background: var(--bg-main);
+            border-color: #cbd5e1;
+            transform: translateY(-1px);
+        }
+
+        /* Section Generic Layouts */
         .portfolio-section {
-            padding: 3rem 0;
+            padding: 6rem 0;
             border-bottom: 1px solid var(--border-light);
         }
         
@@ -76,10 +213,10 @@
             border-radius: 2px;
         }
 
-        /* Systems Clean Enterprise Grid */
+        /* Systems Enterprise Grid Architecture */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
             gap: 1.75rem;
         }
 
@@ -133,7 +270,6 @@
             line-height: 1.6;
         }
 
-        /* Modern Stack Label Architecture */
         .card-footer {
             border-top: 1px solid var(--border-light);
             padding-top: 1.2rem;
@@ -153,7 +289,7 @@
             letter-spacing: 0.2px;
         }
 
-        /* Skills Matrix Layout */
+        /* Skills Layout */
         .skills-container {
             display: grid;
             grid-template-columns: 2fr 1fr;
@@ -330,18 +466,65 @@
             line-height: 1.3rem;
         }
 
+        /* Clean Minimal Footer */
+        footer {
+            background: var(--brand-primary);
+            color: #94a3b8;
+            padding: 5rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--border-light);
+        }
+
+        footer p {
+            max-width: 700px;
+            margin: 0 auto 0.75rem auto;
+            font-size: 0.95rem;
+        }
+
         /* Responsive */
         @media (max-width: 992px) {
+            h1 { font-size: 3rem; }
             .skills-container { grid-template-columns: 1fr; gap: 3rem; }
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .nav-links { display: none; }
+            #overview { padding-top: 6rem; }
         }
     </style>
 </head>
 <body>
 
+    <header>
+        <div class="nav-container">
+            <div class="logo">Donnie <span>Gallocanta</span></div>
+            <ul class="nav-links">
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#applications">Applications</a></li>
+                <li><a href="#stack">Skills & Stack</a></li>
+                <li><a href="#infrastructure">Infrastructure</a></li>
+                <li><a href="#education">Education</a></li>
+            </ul>
+        </div>
+    </header>
+
     <div class="container">
 
-        <!-- Software Solutions Enterprise Grid -->
-        <div class="portfolio-section">
+        <section id="overview">
+            <div class="hero-tag">Systems & Infrastructure</div>
+            <h1>Donnie R. Gallocanta Jr.</h1>
+            <div class="subtitle">Project Technical Staff III &bull; Regional ICT Focal</div>
+            <p class="hero-desc">
+                Full-stack engineer specializing in sovereign public-sector digital environments. Architected over a dozen production-level enterprise databases, systems integrations, and network optimizations driving continuous operations for CHED and NEDA Region 1.
+            </p>
+            <div class="cta-buttons">
+                <a href="#applications" class="btn btn-primary">View Applications</a>
+                <a href="#stack" class="btn btn-secondary">Core Expertise</a>
+            </div>
+        </section>
+
+        <section class="portfolio-section" id="applications">
             <h2 class="section-title">Deployed Application Repository</h2>
             <div class="grid">
                 
@@ -369,7 +552,7 @@
 
                 <div class="card">
                     <div class="card-content">
-                        <div class="card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <div class="card-icon"><i class="fa-solid fa-modal"></i></div>
                         <h3>StuFAPs Online Application</h3>
                         <p>Centralized financial aid application processing suite built with systemic email integration layers to handle digital processing for applicant sweeps smoothly.</p>
                     </div>
@@ -437,7 +620,7 @@
                     <div class="card-content">
                         <div class="card-icon"><i class="fa-solid fa-gauge-high"></i></div>
                         <h3>eBalance Scorecard (eBSC)</h3>
-                        <p>Strategic performance monitoring infrastructure tailored to track government unit target metrics based on official DOST structural standards.</p>
+                        <p>Performance metric network monitoring unit target metrics relative to baseline milestones utilizing standard DOST structural frameworks.</p>
                     </div>
                     <div class="card-footer">
                         <div class="card-stack"><i class="fa-solid fa-code"></i> PHP / MySQL / Target Matrix</div>
@@ -448,7 +631,7 @@
                     <div class="card-content">
                         <div class="card-icon"><i class="fa-solid fa-user-shield"></i></div>
                         <h3>SAS Registration System</h3>
-                        <p>Student Affairs and Services tracking engine cataloging complete academic Higher Education Institution (HEI) logs smoothly into central databases.</p>
+                        <p>Student Affairs and Services tracking engine cataloging complete academic Higher Education Institution (HEI) logs cleanly into central databases.</p>
                     </div>
                     <div class="card-footer">
                         <div class="card-stack"><i class="fa-solid fa-code"></i> PHP / MySQL / Web Dev</div>
@@ -489,10 +672,9 @@
                 </div>
 
             </div>
-        </div>
+        </section>
 
-        <!-- Technical Parameter Breakdown -->
-        <div class="portfolio-section">
+        <section class="portfolio-section" id="stack">
             <h2 class="section-title">Core Technology Stack</h2>
             <div class="skills-container">
                 <div>
@@ -535,10 +717,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Network Physical Matrix Layer -->
-        <div class="portfolio-section">
+        <section class="portfolio-section" id="infrastructure">
             <h2 class="section-title">Network & Hardware Operations</h2>
             <div class="infra-grid">
                 <div class="infra-card">
@@ -557,10 +738,9 @@
                     <p>Managed secure servers at NEDA and constructed complete surveillance grids covering internal structural blindspots.</p>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Professional Timeline -->
-        <div class="portfolio-section">
+        <section class="portfolio-section" id="education">
             <h2 class="section-title">Education & Credentials</h2>
             <div class="timeline">
                 
@@ -589,9 +769,14 @@
                 </div>
 
             </div>
-        </div>
+        </section>
 
     </div>
+
+    <footer>
+        <p>Donnie Rocapor Gallocanta Jr. &bull; Enterprise Systems & Infrastructure Portfolio</p>
+        <p style="font-size:0.85rem; color: #64748b; margin-top: 0.5rem;">DMMMSU-SLUC Computer Science Alumnus &bull; Government Systems Infrastructure</p>
+    </footer>
 
 </body>
 </html>
