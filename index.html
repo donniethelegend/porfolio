@@ -1,172 +1,802 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Donnie Gallocanta Jr. - Portfolio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-ZnvXQZCrgY/6iEprJQ6Hgc+kkbBqHK/FCUq8BzmAeC5yVmwS3wChEjYAEi19f4m60eSpz9yFTHOQGQnWjGw+Wg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
-    }
-    header {
-      background-color: #1e1e1e;
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
-    }
-    .profile-img {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 4px solid #fff;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    }
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    section {
-      background-color: #fff;
-      margin: 20px 0;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    }
-    h2 {
-      color: #1e1e1e;
-      margin-top: 0;
-      border-left: 5px solid #007acc;
-      padding-left: 10px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    ul {
-      padding-left: 20px;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #1e1e1e;
-      color: white;
-      font-size: 14px;
-    }
-    @media (max-width: 600px) {
-      .container {
-        padding: 10px;
-      }
-      .profile-img {
-        width: 100px;
-        height: 100px;
-      }
-      h1 {
-        font-size: 24px;
-      }
-      h2 {
-        font-size: 20px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donnie Rocapor Gallocanta Jr. | Professional Portfolio</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-main: #f8fafc;
+            --bg-card: #ffffff;
+            --brand-primary: #0f172a; /* Slate 900 */
+            --brand-secondary: #2563eb; /* Cobalt Blue */
+            --brand-accent: #38bdf8; /* Sky Blue */
+            --text-main: #1e293b; /* Slate 800 */
+            --text-muted: #64748b; /* Slate 500 */
+            --border-light: #e2e8f0; /* Slate 200 */
+            --tech-bg: #eff6ff; /* Soft Blue Tint */
+            --tech-text: #1e40af; /* Deep Blue Tint */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-light);
+            z-index: 900;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.15rem;
+            color: var(--brand-primary);
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: var(--brand-secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--brand-secondary);
+        }
+
+        /* Sections Layouts */
+        section {
+            padding: 8rem 2rem 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--brand-primary);
+            margin-bottom: 3rem;
+            letter-spacing: -0.5px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 40px;
+            height: 3px;
+            background-color: var(--brand-secondary);
+            border-radius: 2px;
+        }
+
+        /* Hero Layout */
+        #hero {
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 10rem;
+        }
+
+        .hero-tag {
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--brand-secondary);
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--brand-primary);
+            line-height: 1.1;
+            margin-bottom: 1.2rem;
+            letter-spacing: -1.5px;
+        }
+
+        .subtitle {
+            font-size: 1.35rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .hero-desc {
+            max-width: 800px;
+            font-size: 1.15rem;
+            color: var(--text-main);
+            margin-bottom: 3rem;
+            line-height: 1.7;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.2rem;
+        }
+
+        .btn {
+            font-size: 0.95rem;
+            font-weight: 600;
+            padding: 0.85rem 2.2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background: var(--brand-secondary);
+            color: #ffffff;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.2);
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--border-light);
+            color: var(--text-main);
+            background: var(--bg-card);
+        }
+
+        .btn-secondary:hover {
+            background: var(--bg-main);
+            border-color: #cbd5e1;
+            transform: translateY(-1px);
+        }
+
+        /* Systems Clean Enterprise Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.75rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            padding: 2.2rem 2rem;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+            transition: all 0.25s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);
+            border-color: #cbd5e1;
+        }
+
+        .card-content {
+            margin-bottom: 1.5rem;
+        }
+
+        .card-icon {
+            font-size: 1.5rem;
+            color: var(--brand-secondary);
+            margin-bottom: 1.2rem;
+            background: #f0f6ff;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+        }
+
+        .card h3 {
+            color: var(--brand-primary);
+            margin-bottom: 0.75rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        /* Modern Stack Label Architecture */
+        .card-footer {
+            border-top: 1px solid var(--border-light);
+            padding-top: 1.2rem;
+            margin-top: auto;
+        }
+
+        .card-stack {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--tech-text);
+            background: var(--tech-bg);
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            letter-spacing: 0.2px;
+        }
+
+        .card-stack i {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        /* Skills Matrix Layout */
+        .skills-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+        }
+
+        .skills-block h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--brand-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 3rem;
+        }
+
+        .tag {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-main);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+        }
+
+        .tag:hover {
+            border-color: var(--brand-secondary);
+            color: var(--brand-secondary);
+            transform: translateY(-1px);
+        }
+
+        .tag.advanced {
+            background-color: var(--brand-primary);
+            color: #ffffff;
+            border: none;
+        }
+
+        .tag.advanced:hover {
+            background-color: var(--brand-secondary);
+            color: #ffffff;
+        }
+
+        .eligibility-card {
+            background: var(--brand-primary);
+            color: #ffffff;
+            padding: 2.5rem 2rem;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.1);
+            position: relative;
+        }
+
+        .eligibility-card h3 {
+            color: #ffffff;
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .eligibility-status {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--brand-accent);
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.3px;
+        }
+
+        .eligibility-card p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #94a3b8;
+        }
+
+        /* Infrastructure Grid */
+        .infra-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .infra-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            padding: 2.2rem 2rem;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+        }
+
+        .infra-card:hover {
+            border-color: var(--brand-secondary);
+            transform: translateY(-2px);
+        }
+
+        .infra-card i {
+            font-size: 1.5rem;
+            color: var(--brand-secondary);
+            margin-bottom: 1.2rem;
+        }
+
+        .infra-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--brand-primary);
+            margin-bottom: 0.6rem;
+        }
+
+        .infra-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Professional Corporate Timeline Layout */
+        .timeline {
+            border-left: 2px solid var(--border-light);
+            padding-left: 2.5rem;
+            margin-left: 0.5rem;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 4rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: calc(-2.5rem - 7px);
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--brand-secondary);
+            border: 3px solid var(--bg-main);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+        }
+
+        .time {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--brand-secondary);
+            margin-bottom: 0.4rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .timeline-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--brand-primary);
+            margin-bottom: 0.2rem;
+            letter-spacing: -0.3px;
+        }
+
+        .timeline-school {
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .timeline-bullets {
+            list-style: none;
+            color: var(--text-main);
+            font-size: 0.95rem;
+        }
+
+        .timeline-bullets li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        .timeline-bullets li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--brand-secondary);
+            font-weight: bold;
+            font-size: 1.2rem;
+            line-height: 1.3rem;
+        }
+
+        /* Clean Minimal Footer Blueprint */
+        footer {
+            background: var(--brand-primary);
+            color: #94a3b8;
+            padding: 5rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--border-light);
+            margin-top: 8rem;
+        }
+
+        footer p {
+            max-width: 700px;
+            margin: 0 auto 0.75rem auto;
+            font-size: 0.95rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            h1 { font-size: 3rem; }
+            .skills-container { grid-template-columns: 1fr; gap: 3rem; }
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .nav-links { display: none; }
+            section { padding-top: 6rem; }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <img class="profile-img" src="Donnie.png" alt="Donnie Gallocanta Jr.">
-    <h1>Donnie Gallocanta Jr.</h1>
-    <p>Software Engineer | Data Manager | Fullstack Developer</p>
-  </header>
 
-  <div class="container">
-    <section>
-      <h2><i class="fas fa-user"></i> About Me</h2>
-      <p>Hi, I'm Donnie Gallocanta Jr, and welcome to my site! I'm a passionate and driven professional currently working as a Software Engineer. I specialize in web and software development, data analysis, graphic design, host and server management and I’m always eager to learn new tools and technologies that can help me grow in my field.</p>
-      <ul>
-        <li><strong>🔧 Skills:</strong> HTML, CSS, JavaScript, PHP, SQL, Photoshop, VB.net, React.js , Laravel Framework, etc.</li>
-        <li><strong>💼 Current Role:</strong> Project Technical Staff III (Programmer and Data Manager) at Commission on Higher Education Regional Office 1</li>
-        <li><strong>🎯 Career Goals:</strong> I am aiming to establish and launch my own startup, or lead innovative design projects</li>
-      </ul>
+    <!-- Professional Navigation Menu -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Donnie <span>Gallocanta</span></div>
+            <ul class="nav-links">
+                <li><a href="#hero">Overview</a></li>
+                <li><a href="#systems">Applications</a></li>
+                <li><a href="#skills">Skills & Stack</a></li>
+                <li><a href="#infra">Infrastructure</a></li>
+                <li><a href="#history">Education</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Hero Matrix Content -->
+    <section id="hero">
+        <div class="hero-tag">Enterprise Portfolio</div>
+        <h1>Donnie R. Gallocanta Jr.</h1>
+        <div class="subtitle">Project Technical Staff III &bull; Regional ICT Focal</div>
+        <p class="hero-desc">
+            Full-stack engineer specializing in sovereign public-sector digital environments. Architected over a dozen production-level enterprise databases, systems integrations, and network optimizations driving continuous operations for CHED and NEDA Region 1.
+        </p>
+        <div class="cta-buttons">
+            <a href="#systems" class="btn btn-primary">View Applications</a>
+            <a href="#skills" class="btn btn-secondary">Core Expertise</a>
+        </div>
     </section>
 
-    <section>
-      <h2><i class="fas fa-graduation-cap"></i> Education & Training</h2>
-      <ul>
-        <li>Certificate in PC Hardware Servicing NCII</li>
-        <li>Certificate in PC Programming NCIV</li>
-        <li>Web Developer of the Year in Bachelor of Science in Computer Science batch 2015</li>
-        <li>Champion in Computer System Servicing during 6th La Union Provincial Skills Competition</li>
-        <li>1st Runner Up in Computer Hardware Servicing NCII during 4th La Union Provincial Skills Competition</li>
-        <li>Leadership Award S.Y 2013-2014</li>
-        <li>Certificate of Recognition of Thesis titled "Regional Training Center 1 - Online Police Record System" during the 1st CCS Research Conference on ICT 2015</li>
-        <li>Second Place in CST Monthly Competition in Computer Programming Category</li>
-        <li>7 Certificates of Participation in Ilocandia Like IT (Topics: Web setup, Razor, Office 365, Social Media Marketing, Avalanche, Google Apps, Project Thread Safe)</li>
-        <li>Mobile App Development using HTML5 and PhoneGap</li>
-        <li>Advance Web Programming</li>
-        <li>Learn Think Explore (Intel XDK, Google Apps, Arduino Robotics)</li>
-      </ul>
+    <!-- Software Solutions Enterprise Grid -->
+    <section id="systems">
+        <h2 class="section-title">Deployed Application Repository</h2>
+        <div class="grid">
+            
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-icon"><i class="fa-solid fa-bolt"></i></div>
+                    <h3>Quality Statistics System (qStats)</h3>
+                    <p>Internal communication prioritizing network tracking active queues dynamically based on submission tier complexity metrics.</p>
+                </div>
+                <div class="card-footer">
+                    <div class="card-stack"><i class="fa-solid fa-code"></i> PHP / MySQL / JS / CSS</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-icon"><i class="fa-solid fa-server"></i></div>
+                    <h3>HEMIS Collection & Analytics</h3>
+                    <p>Higher Education Management Information System records aggregator executing macro-level database tracking across regional campus records.</p>
+                </div>
+                <div class="card-footer">
+                    <div class="card-stack"><i class="fa-solid fa-code"></i> PHP / MySQL / JSON / JQuery</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-icon"><i class="fa-solid fa-wallet"></i></div>
+                    <h3>eProcurement Infrastructure</h3>
+                    <p>Full-stack fiscal pipeline automated to compile dynamic PPMP/APP data, control structural budget caps, and track internal generation rules for RIS, PR, PO, RFQ, and procurement agreements.</p>
+                </div>
+                <div class="card-footer">
+                    <div class="card-stack"><i class="fa-solid fa-code"></i> PHP / MySQL / JSON / XML</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-icon"><i class="fa-solid fa-location-arrow"></i></div>
+                    <h3>eTravel Order Node</h3>
+                    <p>Online system logging official office travel filings, tracking request hierarchies, and firing instantaneous real-time approval notifications.</p>
+                </div>
+                <div class="card-footer">
+                    <div class="card-stack"><i class="fa-solid fa-code"></i> PHP / MySQL / JavaScript</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-icon"><i class="fa-solid fa-network-wired"></i></div>
+                    <h3>eRPMES Portal</h3>
+                    <p>Electronic Regional Project Monitoring and Evaluation system designed to ingest online agency submissions, manage completions, and index security logs.</p>
+                </div>
+                <div class="card-footer">
+                    <div class="card-stack"><i class="fa-solid fa-code"></i> PHP / MySQL / HTML5</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-icon"><i class="fa-solid fa-cubes"></i></div>
+                    <h3>eSupply Inventory Engine</h3>
+                    <p>Automated warehouse auditing pipeline updating equipment records, tracking material valuation fluctuations, and rendering historical Supply Ledgers.</p>
+                </div>
+                <div class="card-footer">
+                    <div class="card-stack"><i class="fa-solid fa-code"></i> PHP / MySQL / DB Design</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-icon"><i class="fa-solid fa-gauge-high"></i></div>
+                    <h3>eBalance Scorecard (eBSC)</h3>
+                    <p>Performance metric network monitoring unit target metrics relative to baseline milestones utilizing standard DOST structural frameworks.</p>
+                </div>
+                <div class="card-footer">
+                    <div class="card-stack"><i class="fa-solid fa-code"></i> PHP / MySQL / JS Matrix</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-icon"><i class="fa-solid fa-user-shield"></i></div>
+                    <h3>SAS Registration System</h3>
+                    <p>Student Affairs and Services tracker cataloging complete academic higher education institution logs cleanly into central server pools.</p>
+                </div>
+                <div class="card-footer">
+                    <div class="card-stack"><i class="fa-solid fa-code"></i> PHP / MySQL / Web Dev</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-icon"><i class="fa-solid fa-globe"></i></div>
+                    <h3>Foreign Students Registry</h3>
+                    <p>Isolated compliance logging framework specialized in authenticating foreign enrollment files across regional universities.</p>
+                </div>
+                <div class="card-footer">
+                    <div class="card-stack"><i class="fa-solid fa-code"></i> PHP / MySQL / Security</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-icon"><i class="fa-solid fa-calendar-days"></i></div>
+                    <h3>Staff Activity Matrix</h3>
+                    <p>Dynamic sorting calendar interface matching personnel travel parameters, schedules, and active training events across local maps.</p>
+                </div>
+                <div class="card-footer">
+                    <div class="card-stack"><i class="fa-solid fa-code"></i> PHP / MySQL / UI Coding</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                    <h3>DTR Platform Array</h3>
+                    <p>Custom employee time-tracking dashboard engineered to monitor biometric profiles and intervals inside CHED Region 1 and NEDA blocks.</p>
+                </div>
+                <div class="card-footer">
+                    <div class="card-stack"><i class="fa-solid fa-code"></i> PHP / MySQL / Server Sync</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-icon"><i class="fa-solid fa-calculator"></i></div>
+                    <h3>Tuition Analytics Hub</h3>
+                    <p>Analytical financial portal capturing fee schedules across HEIs to render automated trend matrices for data collection sweeps.</p>
+                </div>
+                <div class="card-footer">
+                    <div class="card-stack"><i class="fa-solid fa-code"></i> PHP / MySQL / Analytics</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3>Online Police Record System</h3>
+                    <p>Academic thesis production framework matching secure, encrypted records management profiles across custom internal Java platforms.</p>
+                </div>
+                <div class="card-footer">
+                    <div class="card-stack"><i class="fa-solid fa-code"></i> Java Web / MySQL / CSS</div>
+                </div>
+            </div>
+
+        </div>
     </section>
 
-    <section>
-      <h2><i class="fas fa-trophy"></i> Work Achievements</h2>
-      <ul>
-        <li>eTravel Order System – Online filing of travel order, real-time approval notification, monitoring, ease of use</li>
-        <li>eRPMES – Online project implementation, acknowledgment, user management</li>
-        <li>eProcurement System – PPMP/APP generation, budget tracking, eSuggestion Box, form/document handling</li>
-        <li>eSupply Inventory – Cost history tracking, supply ledger generation</li>
-        <li>eBalance Scorecard – Government system tracking unit targets (DOST)</li>
-        <li>Quality Statistics System – Dynamic communication tracking by priority (CHED)</li>
-        <li>Student Affairs and Services Registration – Student registration system for HEIs</li>
-        <li>Foreign Students Data Registration – System for foreign student registration for HEIs</li>
-        <li>Employee Tracking System – Calendar-based system tracking staff training, travel, activities</li>
-        <li>CHED Dashboard & Analytics System – Real-time HEI submission tracking, graphical insights, foreign student stats, course DB</li>
-        <li>StuFAPs Online Application – Centralized student application processing with email integration</li>
-        <li>StuFAPs Admin Dashboard – Admin validation panel for scholarship application review</li>
-      </ul>
+    <!-- Technical Parameter Breakdown -->
+    <section id="skills">
+        <h2 class="section-title">Core Technology Stack</h2>
+        <div class="skills-container">
+            <div>
+                <div class="skills-block">
+                    <h3>Software Engineering & Web Development</h3>
+                    <div class="tags">
+                        <span class="tag advanced">PHP</span>
+                        <span class="tag advanced">Java Systems</span>
+                        <span class="tag advanced">MySQL Management & Architecture</span>
+                        <span class="tag advanced">HTML5 Layer</span>
+                        <span class="tag advanced">JavaScript Engine</span>
+                        <span class="tag advanced">JQuery Libs</span>
+                        <span class="tag advanced">CSS Development</span>
+                        <span class="tag advanced">JSON / XML Parsing</span>
+                        <span class="tag advanced">Database Engineering</span>
+                    </div>
+                </div>
+
+                <div class="skills-block">
+                    <h3>DevOps, Deployment & Infrastructure Operations</h3>
+                    <div class="tags">
+                        <span class="tag">System Provisioning</span>
+                        <span class="tag">DNS Management</span>
+                        <span class="tag">IP Masking & Routing</span>
+                        <span class="tag">Firewall Execution</span>
+                        <span class="tag">SSL Cryptography Protocols</span>
+                        <span class="tag">Database Tuning</span>
+                        <span class="tag">Multi-Platform A/V Operations</span>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="eligibility-card">
+                    <h3>Government Eligibility</h3>
+                    <div class="eligibility-status">EDPSE Certified</div>
+                    <p>
+                        Electronic Data Processing Specialist Eligibility. Granted under Item No. 8, Part V of CSC MC No. 12, s. 2003 regarding Revised Qualification Frameworks.
+                    </p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section>
-      <h2><i class="fas fa-network-wired"></i> Networking Projects</h2>
-      <ul>
-        <li>CAT6 Cabling – NEDA Local Network setup</li>
-        <li>CCTV Installation – All blind spots covered in NEDA Region 1</li>
-        <li>Server Management – NEDA and CHED servers</li>
-        <li>Network Subnetting – For optimized bandwidth across NEDA and CHED</li>
-      </ul>
+    <!-- Network Physical Matrix Layer -->
+    <section id="infra">
+        <h2 class="section-title">Network & Hardware Operations</h2>
+        <div class="infra-grid">
+            <div class="infra-card">
+                <i class="fa-solid fa-route"></i>
+                <h3>Structured LAN Routing</h3>
+                <p>Completed full design and structural routing loops utilizing CAT6 protocols within physical NEDA installations.</p>
+            </div>
+            <div class="infra-card">
+                <i class="fa-solid fa-network-wired"></i>
+                <h3>Bandwidth Optimization</h3>
+                <p>Designed and managed network subnet systems across active trunks to isolate terminal loops and maximize connection vectors.</p>
+            </div>
+            <div class="infra-card">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h3>Server & Perimeter Safety</h3>
+                <p>Managed secure servers at NEDA and constructed complete surveillance grids covering internal structural blindspots.</p>
+            </div>
+        </div>
     </section>
 
-    <section>
-      <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
-      <ul>
-        <li><strong>[Jan 1, 2024 – Present]:</strong> CHED RO1 – Programmer/Project Technical Staff III (Data Manager/Web Developer/Hardware Servicing)</li>
-        <li><strong>[Apr 1, 2022 – Dec 31, 2023]:</strong> CHED RO1 – Programmer/Project Technical Staff II (Graphic Designer/Web Developer)</li>
-        <li><strong>[Mar 1, 2021 – Mar 31, 2022]:</strong> DOST RO1 – Programmer/Project Assistant I (Web Developer/Technical Assistance)</li>
-        <li><strong>[Aug 17, 2015 – Feb 28, 2021]:</strong> NEDA RO1 – Programmer/Computer Operator II (Fullstack Developer, Job Order)</li>
-      </ul>
+    <!-- Professional Timeline -->
+    <section id="history">
+        <h2 class="section-title">Education & Credentials</h2>
+        <div class="timeline">
+            
+            <div class="timeline-item">
+                <div class="time">Class of 2015</div>
+                <div class="timeline-title">Bachelor of Science in Computer Science</div>
+                <div class="timeline-school">Don Mariano Marcos Memorial State University (DMMMSU - SLUC)</div>
+                <ul class="timeline-bullets">
+                    <li>Awarded <strong>Web Developer of the Year</strong> Honors</li>
+                    <li><strong>Champion</strong> – Computer System Servicing Area (6th La Union Provincial Skills Arena)</li>
+                    <li><strong>1st Runner Up</strong> – Computer Hardware Servicing (4th La Union Skills Arena)</li>
+                    <li>Recipient of the <strong>Institutional Leadership Award</strong> (S.Y. 2013-2014)</li>
+                    <li>Thesis Work: *Regional Training Center 1 Online Police Record System* (Engineered on Java Web technologies and cataloged at the 1st CCS Research Conference on ICT)</li>
+                    <li>2nd Position – CST System Programming Sprint</li>
+                    <li>Professional Certifications: PC Hardware Servicing <strong>NCII</strong> and PC Programming <strong>NCIV</strong></li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="time">Class of 2011</div>
+                <div class="timeline-title">Secondary Education Graduate</div>
+                <div class="timeline-school">Pinmilapil National High School (PNHS)</div>
+                <ul class="timeline-bullets">
+                    <li>Graduated with distinct dual honors: <strong>Athlete of the Year</strong> & <strong>Best in Computer Science</strong></li>
+                </ul>
+            </div>
+
+        </div>
     </section>
 
-    <section>
-      <h2><i class="fas fa-school"></i> Education</h2>
-      <ul>
-        <li><strong>2007–2011:</strong> Pinmilapil National High School – Athlete of the Year, Best in Computer</li>
-        <li><strong>2012–2015:</strong> Don Mariano Marcos Memorial State University - South Campus – Bachelor of Science in Computer Science</li>
-        <li>Thesis: "Regional Training Center 1 - Online Police Record System" (Java Web)</li>
-      </ul>
-    </section>
+    <!-- Footer -->
+    <footer>
+        <p>Donnie Rocapor Gallocanta Jr. &bull; Enterprise Systems & Infrastructure Portfolio</p>
+        <p style="font-size:0.85rem; color: #64748b; margin-top: 0.5rem;">DMMMSU-SLUC Computer Science Alumnus &bull; Government Systems Infrastructure</p>
+    </footer>
 
-    <section>
-      <h2><i class="fas fa-certificate"></i> Eligibility</h2>
-      <p><strong>2022:</strong> ELECTRONIC DATA PROCESSING SPECIALIST ELIGIBILITY (EDPSE)</p>
-      <p>Provided under Item No. 8, Part V of CSC MC No. 12, s. 2003 re: Revised Policies on Qualification Standards</p>
-    </section>
-  </div>
-
-  <footer>
-    <p>&copy; 2025 Donnie Gallocanta Jr. – All Rights Reserved</p>
-  </footer>
 </body>
 </html>
